@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TuRecLore</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="ingreso">Ingresar</string>
+     <string name="lineas">Ingrese linea interrupida </string>
+     <string name="marcaDeCorte">Ingrese Lugar de Corte </string>
+     <string name="descripcionLink">Si desea mas información sobre la aplicacion puede visitar nuestro facebook, click aquí: 
+         							https://www.facebook.com/App.TuRecorrido o tambien visitando nuestra pagina, click aquí: http://www.turecorridosiempre.wix.com/tu-recorrido 
+         							 </string>
+
+</resources>
