@@ -9,8 +9,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 
-
-public class MainActivity extends Activity {
+public class MainActivity extends android.support.v4.app.FragmentActivity {
 	private Button bIngresar;
 	
 	@Override

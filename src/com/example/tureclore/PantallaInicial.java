@@ -36,7 +36,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class PantallaInicial extends Activity {
+public class PantallaInicial extends android.support.v4.app.FragmentActivity {
 
 	TabHost th;
 	//variable de spinner
@@ -86,7 +86,7 @@ public class PantallaInicial extends Activity {
 		
 		specs = th.newTabSpec("tag3");
 		specs.setContent(R.id.tab3);
-		specs.setIndicator("Cuenta");
+		specs.setIndicator("Mapa");
 		th.addTab(specs);
 		
 		specs = th.newTabSpec("tag4");
