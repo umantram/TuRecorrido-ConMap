@@ -10,7 +10,19 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.location.LocationClient;
+
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+
 import android.app.Activity;
+import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.PowerManager;
@@ -51,10 +63,45 @@ public class PantallaInicial extends android.support.v4.app.FragmentActivity {
 	private Cursor c;//no uso
 	private PersistenceHelper dataPersistence;//hizo migue
 
+	private SupportMapFragment mapFragment;
+	private GoogleMap mMap;
+	private double mLat, mLng;
+	private double aLat, aLng;
+	private LocationClient mLocationClient;
+	boolean retrieved_completed = false;
+
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.primer_main);
+		
+		 //The Location client
+//	    mLocationClient = new LocationClient(this, this, this);
+
+	    //We create a map
+	    mapFragment = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map));
+	    mMap = mapFragment.getMap();
+	    //and enable its location
+	    
+	    mMap.setMyLocationEnabled(true);
+	    
+//	    CameraUpdate ZoomCam = CameraUpdateFactory.zoomTo(14);
+//	    mMap.animateCamera(ZoomCam);
+        
+//	    Location location = mLocationClient.getLastLocation();
+//	    LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+//	    CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 17);
+//	    mMap.animateCamera(cameraUpdate);
+	    
+	 // Extraigo la Lat y Lon del Listener
+//         lat = Location.getLatitude();
+//         lon = Location.getLongitude();
+
+        // Muevo la camara a mi posicion
+//	    Location location = mLocationClient.getLastLocation();
+//        CameraUpdate cam = CameraUpdateFactory.newLatLng(new LatLng(location.getLatitude(), location.getLongitude()));
+//        
 		DatosPorDefecto();
 		/*
 		 * dataPersistence = new PersistenceHelper(this);
@@ -95,6 +142,17 @@ public class PantallaInicial extends android.support.v4.app.FragmentActivity {
 		th.addTab(specs);
 
 	}
+	
+//	@Override
+//	protected void onStart() {
+//	    super.onStart();
+//	    // Connect the client.
+////	    if(isGooglePlayServicesAvailable()){
+//	        mLocationClient.connect();
+////	    }
+//
+//	}
+//	
 	private void DatosPorDefecto() {
 		   sp = (Spinner) findViewById(R.id.spinnerLineas);
 		   lista1 = new ArrayList<String>();

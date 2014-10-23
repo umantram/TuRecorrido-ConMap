@@ -21,7 +21,7 @@ public class MainActivity extends android.support.v4.app.FragmentActivity {
 		 bIngresar = (Button) findViewById(R.id.bIngresar);
 		 
 	     bIngresar.setOnClickListener(new OnClickListener(){
-
+	    	 
 	            @Override
 	            public void onClick(View v){
 	            	Intent ingresarIntent = new Intent(MainActivity.this, PantallaInicial.class);
